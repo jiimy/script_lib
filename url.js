@@ -113,6 +113,15 @@ $(document).ready(function () {
     $('header .sub>ul>li').eq($li_index).addClass('on');
   })
 
+  
+  $('.list_itemWrap a').on('click',function(e){
+    find_img_index =$(this).parents('.list_itemWrap').find('.on').index();
+    e.preventDefault();
+    var el = $(this).attr('href');
+    var elOffset = $(el).offset().top;
+    var offset = elOffset - 250
+    $(window).scrollTop(offset);
+  })
 
   // 메인 영상
   $('.area2').click(function (e) {
